@@ -27,15 +27,26 @@
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
-    <!--
-      The views will be rendered in the <ion-nav-view> directive below
-      Templates are in the /templates folder (but you could also
-      have templates inline in this html file if you'd like).
-    -->
-    <ion-nav-view></ion-nav-view>
+ <ion-side-menus>
+  <ion-side-menu side="left">
+      <a menu-close href="#/tab/dash" class="item">Home</a>
+      <a menu-close href="#/chats" class="item">Chats</a>
+      <a menu-close href="#/account" class="item">Settings</a>
+   </ion-side-menu>
+   
+  <ion-side-menu-content>
+    <ion-header-bar class="bar-header bar-dark">
+	  <button class="button button-icon button-clear ion-navicon ion-arrow-left-c" menu-toggle="left"> </button>
+      <div class="h1 title">BInsider</div>
+    </ion-header-bar>
+	<ion-content>
+       <ion-nav-view></ion-nav-view>
+    </ion-content> 
+  </ion-side-menu-content> 
+
+  
+  
+</ion-side-menus>
+	
   </body>
 </html>
