@@ -1,6 +1,32 @@
-angular.module('starter.services', [])
+var myApp = angular.module('starter.services', ['infinite-scroll']);
 
-.factory('Chats', function() {
+// Reddit constructor function to encapsulate HTTP and pagination logic
+myApp.factory('Reddit', function($http) {
+  var Reddit = function() {
+    this.items = [];
+    this.busy = false;
+    this.after = '';
+  };
+
+  Reddit.prototype.nextPage = function() {
+    if (this.busy) return;
+    this.busy = true;
+
+    var url = "mocks/news.json";
+    $http.get(url).then(function(data) {
+      var items = data.data;
+      for (var i = 0; i < items.length; i++) {
+        this.items.push(items[i].data);
+      }
+      this.after = "1";
+      this.busy = false;
+    }.bind(this));
+  };
+
+  return Reddit;
+});
+
+myApp.factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
