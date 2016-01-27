@@ -30,3 +30,9 @@ proguard/
 
 # Android Studio captures folder
 captures/
+
+#Ionic build folder
+platforms
+
+#node modules
+node_modules
