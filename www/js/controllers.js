@@ -6,19 +6,30 @@ angular.module('starter.controllers', ['infinite-scroll'])
 	  };
 })
 
-.controller('ChatsCtrl', function($scope, Chats, Reddit) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+.controller('ChatsCtrl', function($scope, $http, Reddit) {
 
-  $scope.reddit = new Reddit();
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
+	$scope.items = [];
+	$scope.lastPage = false;
+	$scope.index =0 ;
+
+   $scope.nextPage = function() {
+    var url = "mocks/news.json";
+    $http.get(url).success(function(data) {
+      var items = data;
+      for (var i = 0; i < items.length; i++) {
+        $scope.items.push(items[i]);
+      }
+	  $scope.index ++;
+	  
+	  if ($scope.index == 3) {
+		$scope.lastPage = true;
+	  }
+	  $scope.$broadcast('scroll.infiniteScrollComplete');
+    });
+  };
+  
+  $scope.moreDataCanBeLoaded = function() {
+    return !$scope.lastPage;
   };
 })
 

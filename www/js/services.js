@@ -8,7 +8,7 @@ myApp.factory('Reddit', function($http) {
     this.after = '';
   };
 
-  Reddit.prototype.nextPage = function() {
+  Reddit.prototype.nextPage = function($scope) {
     if (this.busy) return;
     this.busy = true;
 
@@ -20,6 +20,7 @@ myApp.factory('Reddit', function($http) {
       }
       this.after = "1";
       this.busy = false;
+	  $scope.$broadcast('scroll.infiniteScrollComplete');
     }.bind(this));
   };
 

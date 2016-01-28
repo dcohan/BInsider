@@ -1,14 +1,11 @@
 <ion-view view-title="Redit">
-<div infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
-    <div ng-repeat='item in reddit.items'>
-      <span class='score'>{{item.score}}</span>
-      <span class='title'>
-        <a ng-href='{{item.url}}' target='_blank'>{{item.title}}</a>
-      </span>
-      <small>by {{item.author}} 
-      </small>
-      <div style='clear: both;'></div>
-    </div>
-    <div ng-show='reddit.busy'>Loading data...</div>
-  </div>
+    <ion-infinite-scroll on-infinite="nextPage()" ng-if="moreDataCanBeLoaded()" distance="10%">
+    </ion-infinite-scroll>
+     <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in items" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <h2>{{item.title}}</h2>
+        <p>{{item.title}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
 </ion-view>
