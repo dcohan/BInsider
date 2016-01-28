@@ -1,33 +1,6 @@
-var myApp = angular.module('starter.services', ['infinite-scroll']);
+angular.module('starter.services', [])
 
-// Reddit constructor function to encapsulate HTTP and pagination logic
-myApp.factory('Reddit', function($http) {
-  var Reddit = function() {
-    this.items = [];
-    this.busy = false;
-    this.after = '';
-  };
-
-  Reddit.prototype.nextPage = function($scope) {
-    if (this.busy) return;
-    this.busy = true;
-
-    var url = "mocks/news.json";
-    $http.get(url).then(function(data) {
-      var items = data.data;
-      for (var i = 0; i < items.length; i++) {
-        this.items.push(items[i].data);
-      }
-      this.after = "1";
-      this.busy = false;
-	  $scope.$broadcast('scroll.infiniteScrollComplete');
-    }.bind(this));
-  };
-
-  return Reddit;
-});
-
-myApp.factory('Chats', function() {
+.factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
