@@ -1,11 +1,13 @@
-<ion-view view-title="Redit">
-    <ion-infinite-scroll on-infinite="nextPage()" ng-if="moreDataCanBeLoaded()" distance="10%">
+<ion-view view-title="News">
+	<ion-content>
+    <ion-infinite-scroll on-infinite="News.nextPage()" ng-if="!News.lastPage" distance="10%">
     </ion-infinite-scroll>
      <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in items" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in News.items" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
         <h2>{{item.title}}</h2>
         <p>{{item.title}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
+	</ion-content>
 </ion-view>

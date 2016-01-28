@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['infinite-scroll'])
+angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope,$ionicSideMenuDelegate) {
 	$scope.toggleLeft = function() {
@@ -6,35 +6,34 @@ angular.module('starter.controllers', ['infinite-scroll'])
 	  };
 })
 
-.controller('ChatsCtrl', function($scope, $http, Reddit) {
+.controller('ChatsCtrl', function($scope, $http, News) {
 
-	$scope.items = [];
-	$scope.lastPage = false;
-	$scope.index =0 ;
+   $scope.News = new News();
 
+   /*
+   $scope.items = [];
+   $scope.lastPage = false;
+   
    $scope.nextPage = function() {
     var url = "mocks/news.json";
     $http.get(url).success(function(data) {
-      var items = data;
+	  var hasData = data.hasMore;
+      var items = data.data;
       for (var i = 0; i < items.length; i++) {
         $scope.items.push(items[i]);
       }
-	  $scope.index ++;
+	 
 	  
-	  if ($scope.index == 3) {
+	  if (!hasData) {
 		$scope.lastPage = true;
 	  }
 	  $scope.$broadcast('scroll.infiniteScrollComplete');
     });
-  };
-  
-  $scope.moreDataCanBeLoaded = function() {
-    return !$scope.lastPage;
-  };
+  };*/
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('ChatDetailCtrl', function($scope, $stateParams) {
+  //$scope.chat = Chats.get($stateParams.chatId);
 })
 
 .controller('AccountCtrl', function($scope) {

@@ -1,5 +1,14 @@
-[{
-	"score": 1,
-	"title": "Doe in the darkness",
-	"author": "David Cohan"
-}]
+{
+"hasMore":false,
+"data":[
+		{
+			"score": 1,
+			"title": "Doe in the darkness",
+			"author": "David Cohan"
+		},
+		{
+			"score": 12,
+			"title": "Doe in the darkness",
+			"author": "David Cohan"
+		}]
+}
