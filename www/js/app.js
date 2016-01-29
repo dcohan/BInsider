@@ -37,7 +37,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/home',
     views: {
       'tab-default': {
-        templateUrl: 'templates/tab-home.html',
+        templateUrl: 'partials/home.html',
         controller: 'HomeCtrl'
       }
     }
@@ -46,7 +46,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/new/:newId',
       views: {
         'tab-default': {
-          templateUrl: 'templates/new-detail.html',
+          templateUrl: 'partials/new-detail.html',
           controller: 'NewDetailCtrl'
         }
       }
@@ -56,7 +56,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/account',
     views: {
       'tab-default': {
-        templateUrl: 'templates/tab-account.html',
+        templateUrl: 'partials/account.html',
         controller: 'AccountCtrl'
       }
     }
