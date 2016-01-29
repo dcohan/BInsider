@@ -4,11 +4,15 @@
 		{
 			"score": 1,
 			"title": "Doe in the darkness",
-			"author": "David Cohan"
+			"author": "David Cohan",
+			"posted": "12 Nov",
+			"image":"img/new1.jpg"
 		},
 		{
 			"score": 12,
 			"title": "Doe in the darkness",
-			"author": "David Cohan"
+			"author": "David Cohan",
+			"posted": "12 Nov",
+			"image":"img/new2.jpg"
 		}]
 }
