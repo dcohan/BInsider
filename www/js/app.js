@@ -31,38 +31,31 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
-
   // Each tab has its own nav history stack:
 
-  .state('tab.home', {
+  .state('home', {
     url: '/home',
     views: {
-      'tab-home': {
+      'tab-default': {
         templateUrl: 'templates/tab-home.html',
         controller: 'HomeCtrl'
       }
     }
   })
-  .state('tab.new-detail', {
+  .state('new-detail', {
       url: '/new/:newId',
       views: {
-        'tab-home': {
+        'tab-default': {
           templateUrl: 'templates/new-detail.html',
           controller: 'NewDetailCtrl'
         }
       }
     })
 
-  .state('tab.account', {
+  .state('account', {
     url: '/account',
     views: {
-      'tab-account': {
+      'tab-default': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
       }
@@ -70,6 +63,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/home');
+  $urlRouterProvider.otherwise('/home');
 
 });
