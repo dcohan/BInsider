@@ -3,8 +3,8 @@
     <ion-infinite-scroll on-infinite="News.nextPage()" ng-if="!News.lastPage" distance="10%">
     </ion-infinite-scroll>
      <ion-list>
-      <ion-item class="item-thumbnail-left" ng-repeat="item in News.items" type="item-text-wrap" href="#/new/{{item.id}}">
-        <img ng-src="{{item.image}}" style="width: 64px; height: 64px">
+      <ion-item class="item-thumbnail-left" ng-repeat="item in News.items  | filter:query" type="item-text-wrap" href="#/new/{{item.id}}">
+        <img ng-src="{{item.imageUrl}}" style="width: 64px; height: 64px">
 		<h2>{{item.title}}</h2>
 		<p>
 		  {{item.author}} | {{item.posted}}

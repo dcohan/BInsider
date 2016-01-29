@@ -7,8 +7,8 @@
 			"title": "Accident car crash",
 			"author": "David Cohan",
 			"posted": "12 Nov",
-			"image":"img/new1.jpg",
-			"new":"mocks/new1.html"
+			"imageUrl":"img/new1.jpg",
+			"newUrl":"mocks/new1.html"
 			
 		},
 		{
@@ -17,7 +17,7 @@
 			"title": "This is the house to live on!",
 			"author": "David Cohan",
 			"posted": "12 Nov",
-			"image":"img/new2.jpg",
-			"new":"mocks/new2.html"
+			"imageUrl":"img/new2.jpg",
+			"newUrl":"mocks/new2.html"
 		}]
 }

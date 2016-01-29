@@ -1,17 +1,20 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($scope, $ionicSideMenuDelegate, News) {
-
-	$scope.toggleLeft = function() {
-		$ionicSideMenuDelegate.toggleLeft();
-	  };
+.controller('HomeCtrl', function($rootScope, $scope, News) {
 	  
-   $scope.News = new News();
+   $rootScope.News = new News();
 
 })
 
-.controller('NewDetailCtrl', function($scope, News, $ionicSideMenuDelegate,$stateParams) {
-  //$scope.notice = News.get($stateParams.newId);
+.controller('NewDetailCtrl', function($rootScope, $scope, News,$stateParams, $sce, $http) {
+
+   var notice = $rootScope.News.getById($stateParams.newId);
+   if (notice) {
+		var url = notice.newUrl;
+    $http.get(url).success(function(data) {
+	  $scope.newDetailedHtml = $sce.trustAsHtml(data);
+    });
+  }
 })
 
 .controller('AccountCtrl', function($scope, Settings) {

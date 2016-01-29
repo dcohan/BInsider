@@ -1,13 +1,13 @@
 angular.module('starter.services', [])
 
 .factory('News', function($http) {
-   var News = function() {
+   var news = function() {
     this.items = [];
     this.busy = false;
 	this.lastPage = false;
   };
 
-  News.prototype.nextPage = function() {
+  news.prototype.nextPage = function() {
     if (this.busy) return;
     this.busy = true;
 
@@ -22,13 +22,21 @@ angular.module('starter.services', [])
 	  if (!hasData) {
 		this.lastPage = true;
 	  }
-	  //$scope.$broadcast('scroll.infiniteScrollComplete');
 	  this.busy = false;
     }.bind(this));
-  }
+  };
+  
+  news.prototype.getById = function(newId) {
+      for (var i = 0; i < this.items.length; i++) {
+        if (this.items[i].id === parseInt(newId)) {
+          return this.items[i];
+        }
+      }
+      return null;
+  };
 	
-  return News;
- 
+  return news;
+  
 })
 
 .factory('Settings', function($http) {
