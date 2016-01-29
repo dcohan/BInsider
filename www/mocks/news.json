@@ -4,17 +4,20 @@
 		{
 			"id": 1,
 			"score": 1,
-			"title": "Doe in the darkness 2",
+			"title": "Accident car crash",
 			"author": "David Cohan",
 			"posted": "12 Nov",
-			"image":"img/new1.jpg"
+			"image":"img/new1.jpg",
+			"new":"mocks/new1.html"
+			
 		},
 		{
 			"id": 2,
 			"score": 12,
-			"title": "Doe in the darkness 3",
+			"title": "This is the house to live on!",
 			"author": "David Cohan",
 			"posted": "12 Nov",
-			"image":"img/new2.png"
+			"image":"img/new2.jpg",
+			"new":"mocks/new2.html"
 		}]
 }
