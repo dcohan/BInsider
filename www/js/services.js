@@ -29,4 +29,19 @@ angular.module('starter.services', [])
 	
   return News;
  
+})
+
+.factory('Settings', function($http) {
+   var Settings = function() {
+  };
+
+  Settings.prototype.EnablePushNotifications = function(value, deviceId) {
+    
+    var url = "mocks/enablePushes.json?value="+value+"&deviceId="+deviceId;
+    $http.get(url);
+	console.log('Push notifications updated!');
+  } 
+  
+  return Settings;
 });
+

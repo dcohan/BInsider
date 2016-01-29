@@ -10,12 +10,17 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('NewDetailCtrl', function($scope, $ionicSideMenuDelegate,$stateParams) {
-  //$scope.chat = Chats.get($stateParams.chatId);
+.controller('NewDetailCtrl', function($scope, News, $ionicSideMenuDelegate,$stateParams) {
+  //$scope.notice = News.get($stateParams.newId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope, Settings) {
   $scope.settings = {
-    enableFriends: true
+    enableNotifications: true
   };
+  
+  $scope.updateNotifications = function() {
+    var SettingsSvc = new Settings();
+	SettingsSvc.EnablePushNotifications($scope.settings.enableNotifications,'deviceid');
+  }
 });
