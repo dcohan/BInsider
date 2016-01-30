@@ -19,12 +19,13 @@
     "tmp": "0.0.23"
   },
   "cordovaPlugins": [
-    "cordova-plugin-device",
-    "cordova-plugin-console",
-    "cordova-plugin-whitelist",
-    "cordova-plugin-splashscreen",
-    "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    "cordova-plugin-device@1.1.1",
+    "cordova-plugin-console@1.0.2",
+    "cordova-plugin-whitelist@1.2.1",
+    "cordova-plugin-splashscreen@3.1.0",
+    "cordova-plugin-statusbar@2.1.0",
+    "ionic-plugin-keyboard@1.0.8",
+	"phonegap-plugin-push@1.5.3"
   ],
   "cordovaPlatforms": [
     "android"

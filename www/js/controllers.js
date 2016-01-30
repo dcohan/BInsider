@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic'])
 
 .controller('HomeCtrl', function($rootScope, $scope, News) {
 	  
@@ -24,6 +24,31 @@ angular.module('starter.controllers', [])
   
   $scope.updateNotifications = function() {
     var SettingsSvc = new Settings();
+	 
+	SettingsSvc.deviceInformation = ionic.Platform.device();
+	if (ionic.Platform.isWebView()) {
+		SettingsSvc.deviceType = 'WEB';
+	} 
+	
+	if (ionic.Platform.isIPad()) {
+		SettingsSvc.deviceType = 'IPAD';
+	} 
+	
+	if (ionic.Platform.isIOS()) {
+		SettingsSvc.deviceType = 'IOS';
+	} 
+	
+	if (ionic.Platform.isAndroid()) {
+		SettingsSvc.deviceType = 'ANDROID';
+	} 
+
+	if (ionic.Platform.isWindowsPhone()) {
+		SettingsSvc.deviceType = 'WPHONE';
+	} 
+
+	SettingsSvc.currentPlatform = ionic.Platform.platform();
+	SettingsSvc.currentPlatformVersion = ionic.Platform.version();
+
 	SettingsSvc.EnablePushNotifications($scope.settings.enableNotifications,'deviceid');
   }
 });
