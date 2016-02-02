@@ -48,20 +48,22 @@ angular.module('starter.services', [])
 
   Settings.prototype.EnablePushNotifications = function(value) {
     
-	if (value){
-		var push = new Ionic.Push({
-		  "debug": true
-		});
+	$ionicPlatform.ready(function() {
+		if (value){
+			var push = new Ionic.Push({
+			  "debug": true
+			});
 
-		push.register(function(token) {
-		  console.log("Device token:",token.token);
-		  
-			var url = "mocks/enablePushes.json?value="+value+"&deviceId="+token.token+"&deviceType="+this.deviceType;
-			$http.get(url);
-			
-			console.log('Push notifications updated!');
-		});
-	}
+			push.register(function(token) {
+			  console.log("Device token:",token.token);
+			  
+				var url = "mocks/enablePushes.json?value="+value+"&deviceId="+token.token+"&deviceType="+this.deviceType;
+				$http.get(url);
+				
+				console.log('Push notifications updated!');
+			});
+		}
+	});
 	
     
   } 

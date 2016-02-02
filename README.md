@@ -22,7 +22,8 @@ Prepare the solution by performing the following steps
 
 npm install
 ionic platform add android
-ionic plugin add
+ionic state restore
+ionic add ionic-platform-web-client
 ionic build
 ionic run android (this will launch an emulator with the app inside of it)
 

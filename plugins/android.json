@@ -7,26 +7,26 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.myapp469747"
-        },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.myapp469747"
+            "PACKAGE_NAME": "com.paco.FInsider"
         },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.myapp469747"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.myapp469747"
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.paco.FInsider"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.myapp469747"
+            "PACKAGE_NAME": "com.paco.FInsider"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.paco.FInsider"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.paco.FInsider"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.myapp469747"
+            "PACKAGE_NAME": "com.paco.FInsider"
         },
         "phonegap-plugin-push": {
-            "PACKAGE_NAME": "com.ionicframework.myapp469747"
+            "PACKAGE_NAME": "com.paco.FInsider"
         }
     },
     "dependent_plugins": {}

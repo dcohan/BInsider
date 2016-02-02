@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,6 +20,44 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+	
+	Ionic.io(); 
+	
+	var user = Ionic.User.current();
+	if (!user.id) {
+		user.id = Ionic.User.anonymousId();
+
+		// save our newly created user
+		user.save();
+	}
+	
+	var push = new Ionic.Push({
+	  "debug": true,
+	   "onNotification": function(notification) {
+		var payload = notification.payload;
+		alert(notification);
+		alert(payload);
+	  }
+	});
+
+	push.register(function(token) {
+	  
+	  
+		//var url = "mocks/enablePushes.json?value="+value+"&deviceId="+token+"&deviceType="+this.deviceType;
+		//$http.get(url);
+		
+		 // now we have token, so add it to user
+		push.addTokenToUser(user);
+		
+		
+
+		// don't forget to save user to Ionic Platform with our new token
+		user.save();
+		
+		//alert("Device token after added token to user:",token.token);
+		
+		alert('Push notifications updated!');
+	});
   });
 })
 

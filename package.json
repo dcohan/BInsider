@@ -1,7 +1,7 @@
 {
-  "name": "myapp",
+  "name": "FInsider",
   "version": "1.1.1",
-  "description": "myApp: An Ionic project",
+  "description": "FInsider: Financial Insider application news",
   "repository": "https://github.com/dcohan/BInsider",
   "license": "MIT",
   "dependencies": {
